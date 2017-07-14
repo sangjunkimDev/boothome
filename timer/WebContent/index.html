@@ -18,7 +18,8 @@
 <!-- Template CSS Files
         ================================================== -->
 <!-- Twitter Bootstrs CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/bootstrap.css">
 <!-- Ionicons Fonts Css -->
 <link rel="stylesheet" href="css/ionicons.min.css">
 <!-- animate css -->
@@ -34,6 +35,8 @@
 <!-- responsive css -->
 <link rel="stylesheet" href="css/responsive.css">
 
+<!-- 나만의 css -->
+<link rel="stylesheet" href="css/custom.css">
 <!-- Template Javascript Files
         ================================================== -->
 <!-- modernizr js -->
@@ -125,23 +128,21 @@
 						<section class="cd-intro">
 							<h1 class="wow fadeInUp animated cd-headline slide"
 								data-wow-delay=".4s">
-								<span>반갑습니다</span> <span
-									class="cd-words-wrapper"> <b class="is-visible">고양이집사</b>
-									<b>강아지집사</b> <b>개성파 집사</b>
+								<span>반갑습니다</span> <span class="cd-words-wrapper"> <b
+									class="is-visible">고양이집사</b> <b>강아지집사</b> <b>개성파 집사</b>
 								</span> <span>여러분</span><br>
 							</h1>
 						</section>
 						<!-- cd-intro -->
 						<!-- /.slider -->
 						<h2 class="wow fadeInUp animated" data-wow-delay=".6s">
-							저희는 새로운 인생을 드리기 위해 반려 동물 친구들을 분양해줍니다.<br>
-							또한 분양은 동물에게도 새로운 인생을 줍니다.<br>
-							유기된 우리 동물 친구들과 함께 새로운 인생을 살아보세요!
+							저희는 새로운 인생을 드리기 위해 반려 동물 친구들을 분양해줍니다.<br> 또한 분양은 동물에게도 새로운
+							인생을 줍니다.<br> 유기된 우리 동물 친구들과 함께 새로운 인생을 살아보세요!
 						</h2>
 						<a
 							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
-							data-wow-delay=".9s" href="#works" data-section="#works">
-							새로온 동물 보러가기!</a>
+							data-wow-delay=".9s" href="#works" data-section="#works"> 새로온
+							동물 보러가기!</a>
 
 					</div>
 				</div>
@@ -188,39 +189,47 @@
 				</p>
 			</div>
 			<div class="row">
+			<!-- 
+			
+			<div class="row"> 안에 있는것들
+			for문 돌리기!!!!!
+			5행 3열
+			
+			  -->
+			<table>
+			<tr>
+			<td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated portfolio-item"
 						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="img-wrapper">
-							<img src="images/animal/dog/dog_01.jpg" class="img-responsive" 
-								alt="this is a title">
-							<div class="overlay">
-								<div class="buttons"><!-- 이미지경로 바꾸기 -->
-									<a rel="gallery" class="fancybox"
-										href="images/animal/dog/dog_01.jpg">확대</a> <a target="_blank"
-										href="single-portfolio.html">상세설명</a>
-								</div>
-							</div>
+						<div class="img-wrapper" id="myphoto">
+								<img src="images/animal/dog/dog_03.jpg" class="img-responsive"
+									alt="this is a title">
 						</div>
 						<figcaption>
-							<h4><!-- 강아지 품종 -->
-								<a href="#"> 골든 리트리버 </a>
-							</h4><!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+							<h4>
+								<!-- 강아지 품종 -->
+								<a href="single-portfolio.html"> 골든 리트리버 </a>
+							</h4>
+							<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
 							<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
 						</figcaption>
 					</figure>
 				</div>
+				<!-- </li>
+				<li> -->
+				</td>
+				<td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="300ms">
-						<div class="img-wrapper">
-							<img src="images/animal/cat/cat_01.jpg" class="img-responsive"
+						<div class="img-wrapper" id="myphoto">
+							<img src="images/animal/dog/dog_03.jpg" class="img-responsive"
 								alt="this is a title">
 							<div class="overlay">
 								<div class="buttons">
-									<a rel="gallery" class="fancybox"
-										href="images/animal/cat/cat_01.jpg">확대</a> <a target="_blank"
-										href="single-portfolio.html">상세설명</a>
+									<!-- <a rel="gallery" class="fancybox" href="images/animal/dog/dog_03.jpg">확대</a>  -->
+										<a target="_blank" href="single-portfolio.html">상세설명</a>
 								</div>
 							</div>
 						</div>
@@ -232,10 +241,14 @@
 						</figcaption>
 					</figure>
 				</div>
+				<!-- </li>
+				<li> -->
+				</td>
+				<td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="300ms">
-						<div class="img-wrapper">
+						<div class="img-wrapper" id="myphoto">
 							<img src="images/animal/etc/etc_01.jpg" class="img-responsive"
 								alt="">
 							<div class="overlay">
@@ -254,16 +267,23 @@
 						</figcaption>
 					</figure>
 				</div>
+				</td>
+				</tr>
+				<!-- </li>
+				<li> -->
+				
+				<tr>
+				<td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="600ms">
-						<div class="img-wrapper">
-							<img src="images/portfolio/item-4.jpg" class="img-responsive"
+						<div class="img-wrapper" id="myphoto">
+							<img src="images/animal/etc/etc_02.jpg" class="img-responsive"
 								alt="">
 							<div class="overlay">
 								<div class="buttons">
 									<a rel="gallery" class="fancybox"
-										href="images/portfolio/item-4.jpg">Demo</a> <a target="_blank"
+										href="images/animal/etc/etc_02.jpg">Demo</a> <a target="_blank"
 										href="single-portfolio.html">Details</a>
 								</div>
 							</div>
@@ -276,17 +296,21 @@
 						</figcaption>
 					</figure>
 				</div>
+				<!-- </li>
+				<li> -->
+				</td>
+				<td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="900ms">
-						<div class="img-wrapper">
+						<div class="img-wrapper" id="myphoto">
 							<img src="images/animal/dog/dog_02.jpg" class="img-responsive"
 								alt="">
 							<div class="overlay">
 								<div class="buttons">
 									<a rel="gallery" class="fancybox"
-										href="images/animal/dog/dog_02.jpg">Demo</a> <a target="_blank"
-										href="single-portfolio.html">Details</a>
+										href="images/animal/dog/dog_02.jpg">Demo</a> <a
+										target="_blank" href="single-portfolio.html">Details</a>
 								</div>
 							</div>
 						</div>
@@ -298,6 +322,62 @@
 						</figcaption>
 					</figure>
 				</div>
+				<!-- </li>
+				<li> -->
+				</td>
+				<td>
+				<div class="col-sm-4 col-xs-12">
+					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
+						data-wow-delay="1200ms">
+						<div class="img-wrapper" id="myphoto">
+							<img src="images/animal/cat/cat_02.jpg" class="img-responsive"
+								alt="">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox"
+										href="images/portfolio/item-6.jpg">Demo</a> <a target="_blank"
+										href="single-portfolio.html">Details</a>
+								</div>
+							</div>
+						</div>
+						<figcaption>
+							<h4>
+								<a href="#"> Caramel Bottle </a>
+							</h4>
+							<p>Lorem ipsum dolor.</p>
+						</figcaption>
+					</figure>
+				</div>
+				<!-- </li>
+				<li> -->
+				</td></tr>
+				<tr>
+				<td>
+				<div class="col-sm-4 col-xs-12">
+					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
+						data-wow-delay="1200ms">
+						<div class="img-wrapper">
+							<img src="images/animal/etc/etc_03.jpg" class="img-responsive"
+								alt="">
+							<div class="overlay">
+								<div class="buttons">
+									<a rel="gallery" class="fancybox"
+										href="images/animal/etc/etc_03.jpg">Demo</a> <a target="_blank"
+										href="single-portfolio.html">Details</a>
+								</div>
+							</div>
+						</div>
+						<figcaption>
+							<h4>
+								<a href="#"> Caramel Bottle </a>
+							</h4>
+							<p>Lorem ipsum dolor.</p>
+						</figcaption>
+					</figure>
+				</div>
+				<!-- </li>
+				<li> -->
+				</td><td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="1200ms">
@@ -320,6 +400,9 @@
 						</figcaption>
 					</figure>
 				</div>
+				<!-- </li>
+				<li> -->
+				</td><td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="1200ms">
@@ -342,6 +425,9 @@
 						</figcaption>
 					</figure>
 				</div>
+				<!-- </li>
+				</ul> -->
+				</td></tr><tr><td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="1200ms">
@@ -364,6 +450,7 @@
 						</figcaption>
 					</figure>
 				</div>
+				</td><td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="1200ms">
@@ -386,144 +473,7 @@
 						</figcaption>
 					</figure>
 				</div>
-				                        <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Caramel Bottle
-                                </a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor.
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                                                <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Caramel Bottle
-                                </a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor.
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                                                <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Caramel Bottle
-                                </a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor.
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                                                <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-								<div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Caramel Bottle
-                                </a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor.
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                                                <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Caramel Bottle
-                                </a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor.
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
-                                                <div class="col-sm-4 col-xs-12">
-                            <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                                <div class="img-wrapper">
-                                    <img src="images/portfolio/item-6.jpg" class="img-responsive" alt="" >
-                                    <div class="overlay">
-                                        <div class="buttons">
-                                            <a rel="gallery" class="fancybox" href="images/portfolio/item-6.jpg">Demo</a>
-                                            <a target="_blank" href="single-portfolio.html">Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption>
-                                <h4>
-                                <a href="#">
-                                    Caramel Bottle
-                                </a>
-                                </h4>
-                                <p>
-                                    Lorem ipsum dolor.
-                                </p>
-                                </figcaption>
-                            </figure>
-                        </div>
+				</td><td>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
 						data-wow-delay="1200ms">
@@ -546,50 +496,7 @@
 						</figcaption>
 					</figure>
 				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
-						data-wow-delay="1200ms">
-						<div class="img-wrapper">
-							<img src="images/portfolio/item-6.jpg" class="img-responsive"
-								alt="">
-							<div class="overlay">
-								<div class="buttons">
-									<a rel="gallery" class="fancybox"
-										href="images/portfolio/item-6.jpg">Demo</a> <a target="_blank"
-										href="single-portfolio.html">Details</a>
-								</div>
-							</div>
-						</div>
-						<figcaption>
-							<h4>
-								<a href="#"> Caramel Bottle </a>
-							</h4>
-							<p>Lorem ipsum dolor.</p>
-						</figcaption>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated" data-wow-duration="500ms"
-						data-wow-delay="1200ms">
-						<div class="img-wrapper">
-							<img src="images/portfolio/item-6.jpg" class="img-responsive"
-								alt="">
-							<div class="overlay">
-								<div class="buttons">
-									<a rel="gallery" class="fancybox"
-										href="images/portfolio/item-6.jpg">Demo</a> <a target="_blank"
-										href="single-portfolio.html">Details</a>
-								</div>
-							</div>
-						</div>
-						<figcaption>
-							<h4>
-								<a href="#"> Caramel Bottle </a>
-							</h4>
-							<p>Lorem ipsum dolor.</p>
-						</figcaption>
-					</figure>
-				</div>
+				</td></tr></table>
 			</div>
 		</div>
 	</section>

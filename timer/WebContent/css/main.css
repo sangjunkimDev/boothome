@@ -4,6 +4,7 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -357,8 +358,8 @@ figure .overlay:hover a {
 }
 figure .buttons {
   position: absolute;
-  top: 45%;
-  left: 24%;
+  top: 40%;
+  left: 30%;
 }
 figure figcaption {
   padding: 20px 25px;

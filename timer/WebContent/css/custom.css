@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+tr, td {
+	width: 380px;
+}
+
+
+
+
+
+/* #custom-block {
+	display: inline-block;
+}
+
+#custom-container {
+	text-align: center;
+} */
+
+@media ( min-width : 1200px) {
+	.col-md-3-c {
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+@media ( min-width : 992px) {
+	.col-md-3-c {
+		float: inherit;
+	}
+	.col-md-3-c {
+		width: 25%;
+	}
+}
