@@ -148,18 +148,8 @@
 							src="images/animal/dog/dog_04.jpg">
 					</div>
 					<div class="portfolio-content">
-						<p>테이블 만들고
-						보호중/찾는중
-						성별
-						대략적인 나이
-						중성화
-						몸무게
-						입양소 주소
-						날짜
-						색깔
-						
-						특징은 아무래도 자료마다 다르므로 전화로 물어보라고 하기?
-						</p>
+						<p>테이블 만들고 보호중/찾는중 성별 대략적인 나이 중성화 몸무게 입양소 주소 입양소 이름 입양소 번호
+							발견장소 날짜 색깔 특징은 아무래도 자료마다 다르므로 전화로 물어보라고 하기?</p>
 					</div>
 
 				</div>
@@ -246,47 +236,59 @@
 								};
 
 								// 지도를 생성합니다    
-								var map = new daum.maps.Map(mapContainer,
-										mapOption);
-
+								var map = new daum.maps.Map(mapContainer,mapOption);
+								// 지도 타입 변경 컨트롤을 생성한다
+								var mapTypeControl = new daum.maps.MapTypeControl();
+								// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
+								map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);	
+								// 지도에 확대 축소 컨트롤을 생성한다
+								var zoomControl = new daum.maps.ZoomControl();
+								// 지도의 우측에 확대 축소 컨트롤을 추가한다
+								map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
 								// 주소-좌표 변환 객체를 생성합니다
 								var geocoder = new daum.maps.services.Geocoder();
+								// 지도 중심 좌표 변화 이벤트를 등록한다
+								daum.maps.event.addListener(map, 'center_changed', function () {
+									console.log('지도의 중심 좌표는 ' + map.getCenter().toString() +' 입니다.');
+								});
+								
+								///////callback 객체 생성
+								var callback = function(status, result) {
+									// 정상적으로 검색이 완료됐으면 
+									if (status === daum.maps.services.Status.OK) {
+										var coords = new daum.maps.LatLng(
+												result.addr[0].lat,
+												result.addr[0].lng);
+										// 결과값으로 받은 위치를 마커로 표시합니다
+										var marker = new daum.maps.Marker({
+											map : map,
+											position : coords
+										});
 
-								// 주소로 좌표를 검색합니다
-								geocoder
-										.addr2coord(
-												'경상남도 통영시 광도면 죽림3로 33 (광도면) 사랑애완동물병원', 
-												/* custom   
-												db에서 가져와 주소 붙여넣기 */
-												function(status, result) {
-
-													// 정상적으로 검색이 완료됐으면 
-													if (status === daum.maps.services.Status.OK) {
-
-														var coords = new daum.maps.LatLng(
-																result.addr[0].lat,
-																result.addr[0].lng);
-
-														// 결과값으로 받은 위치를 마커로 표시합니다
-														var marker = new daum.maps.Marker(
-																{
-																	map : map,
-																	position : coords
-																});
-
-														// 인포윈도우로 장소에 대한 설명을 표시합니다
-														// db에서 위치 이름 가져오기
-														var infowindow = new daum.maps.InfoWindow(
-																{
-																	content : '<div style="width:150px;text-align:center;padding:6px 0;">사랑애완동물병원</div>'
-																});
-														infowindow.open(map,
-																marker);
-
-														// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-														map.setCenter(coords);
-													}
+										// 인포윈도우로 장소에 대한 설명을 표시합니다
+										// db에서 위치 이름 가져오기
+										var infowindow = new daum.maps.InfoWindow(
+												{
+													content : '<div style="width:150px;text-align:center;padding:6px 0;">대구시수의사회(더난)</div>'
 												});
+										infowindow.open(map, marker);
+
+										// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+										map.setCenter(coords);
+										// 지도 중심 좌표 변화 이벤트를 등록한다
+										daum.maps.event.addListener(map, 'center_changed', function () {
+											console.log('지도의 중심 좌표는 ' + map.getCenter().toString() +' 입니다.');
+											//document.write('<br><br><br><br><br><br><br><br><h1><a href=http://map.daum.net/link/to/대구시수의사회(더난),'+ +map.getCenter().toString()+'</h1>');
+										});
+									}
+								};
+								
+								// 주소로 좌표를 검색합니다 //db에서 가져와 주소 붙여넣기
+								geocoder.addr2coord({
+									addr : '대구광역시 서구 국채보상로 176 (중리동)',
+									callback : callback
+								});
+								
 							</script>
 						</div>
 					</div>
