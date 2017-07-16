@@ -1,58 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="no-js">
 <head>
-    <meta charset="utf-8">
-    <title>주소로 장소 표시하기</title>
-    
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>Timer Agency Template</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<!-- Mobile Specific Metas
+        ================================================== -->
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Template CSS Files
+        ================================================== -->
+<!-- Twitter Bootstrs CSS -->
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<!-- Ionicons Fonts Css -->
+<link rel="stylesheet" href="css/ionicons.min.css">
+<!-- animate css -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Hero area slider css-->
+<link rel="stylesheet" href="css/slider.css">
+<!-- owl craousel css -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css">
+<!-- template main css file -->
+<link rel="stylesheet" href="css/main.css?ver=1">
+<!-- responsive css -->
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- 나만의 css -->
+<link rel="stylesheet" href="css/custom.css">
+<!-- Template Javascript Files
+        ================================================== -->
+<!-- modernizr js -->
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<!-- jquery -->
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- owl carouserl js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- bootstrap js -->
+
+<script src="js/bootstrap.min.js"></script>
+<!-- wow js -->
+<script src="js/wow.min.js"></script>
+<!-- slider js -->
+<script src="js/slider.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<!-- template main js -->
+<script src="js/main.js"></script>
+<style>
+@media ( max-width : 640px ) {
+	#animal, #animal thead, #animal tbody, #animal tr, #animal th,
+		#animal td {
+		display: block;
+	}
+	#animal tr {
+		border-bottom: 1px solid #ddd;
+	}
+	#animal th, #animal td {
+		border-top: none;
+		border-bottom: none;
+	}
+}
+</style>
 </head>
-<body>
-<p style="margin-top:-12px">
-    <em class="link">
-        <a href="javascript:void(0);" onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
-            혹시 주소 결과가 잘못 나오는 경우에는 여기에 제보해주세요.
-        </a>
-    </em>
-</p>
-<div id="map" style="width:100%;height:350px;"></div>
-
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=813f5e39b246a2a99a63ea0e67fb9706&libraries=services"></script>
-<script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };  
-
-// 지도를 생성합니다    
-var map = new daum.maps.Map(mapContainer, mapOption); 
-
-// 주소-좌표 변환 객체를 생성합니다
-var geocoder = new daum.maps.services.Geocoder();
-
-// 주소로 좌표를 검색합니다
-geocoder.addr2coord('제주특별자치도 제주시 첨단로 242', function(status, result) {
-
-    // 정상적으로 검색이 완료됐으면 
-     if (status === daum.maps.services.Status.OK) {
-
-        var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
-
-        // 결과값으로 받은 위치를 마커로 표시합니다
-        var marker = new daum.maps.Marker({
-            map: map,
-            position: coords
-        });
-
-        // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new daum.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-        });
-        infowindow.open(map, marker);
-
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
-    } 
-});    
-</script>
+<body></body>
+<section id="animal">
+	<div class="container">
+		<div class="row">
+			<table id="animal" class="table">
+				<tr>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_03.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_02.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_01.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+				</tr>
+				<tr>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_03.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_02.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_01.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+				</tr>
+				<tr>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_03.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_02.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+					<td><div class="col-sm-4 col-xs-12">
+							<figure class="wow fadeInLeft animated portfolio-item"
+								data-wow-duration="500ms" data-wow-delay="0ms">
+								<div class="img-wrapper" id="myphoto">
+									<img src="images/animal/dog/dog_01.jpg" class="img-responsive"
+										alt="this is a title">
+								</div>
+								<figcaption>
+									<h4>
+										<!-- 강아지 품종 -->
+										<a href="single-portfolio.html"> 골든 리트리버 </a>
+									</h4>
+									<!-- 보호센터 지역  주소는 2줄이상 되면 안됨!!! -->
+									<p>충청남도 천안시 동남구 통정3로 68, 한성필하우스</p>
+								</figcaption>
+							</figure>
+						</div></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</section>
 </body>
-</html>

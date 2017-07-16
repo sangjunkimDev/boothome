@@ -1,35 +1,108 @@
 @CHARSET "UTF-8";
 
-tr, td {
+/* #animal-tr-index {
 	width: 380px;
 }
-
-
-
-
-
-/* #custom-block {
-	display: inline-block;
+#animal-td-index{
+	width: 380px;
 }
+#animal-tr-shop {
+	width: 350px;
+}
+#animal-td-shop{
+	width: 350px;
+}
+
+#custom-block {
+	display: inline-block;
+	padding-left: 20px;
+}
+
 
 #custom-container {
 	text-align: center;
-} */
-
-@media ( min-width : 1200px) {
+}
+@media ( min-width : 992px) {
 	.col-md-3-c {
 		position: relative;
 		min-height: 1px;
 		padding-right: 15px;
 		padding-left: 15px;
+		float: left;
 	}
 }
 
-@media ( min-width : 992px) {
-	.col-md-3-c {
-		float: inherit;
+.list-group-item {
+	text-align: center;
+}
+
+
+@media ( max-width : 640px ) {
+	#animal, #animal thead, #animal tbody, #animal tr, #animal th,
+		#animal td {
+		display: block;
 	}
-	.col-md-3-c {
-		width: 25%;
+	#animal tr {
+		border-bottom: 1px solid #ddd;
+	}
+	#animal th, #animal td {
+		border-top: none;
+		border-bottom: none;
+	}
+	#animal {
+	margin-left: -15px;
+	margin-right: -15px;
 	}
 }
+
+@media (min-width: 992px)
+.col-md-9-c {
+    width: 75%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-md-9-c {
+	position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+} */
+
+/* 
+http://webdir.tistory.com/487
+ */
+.thumbnail-wrappper {
+	width: 25%;
+}
+
+.thumbnail {
+	position: relative;
+	padding-top: 180%; /* 만약에 사진이 너무길어서 아래에 글이 짤릴경우 퍼센트 올리기 */
+	overflow: hidden;
+}
+
+.thumbnail .centered {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	-webkit-transform: translate(50%, 50%);
+	-ms-transform: translate(50%, 50%);
+	transform: translate(50%, 50%);
+}
+
+.thumbnail .centered img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: 100%;
+	height: auto;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
