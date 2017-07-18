@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -18,23 +20,23 @@
 <!-- Template CSS Files
         ================================================== -->
 <!-- Twitter Bootstrs CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 <!-- Ionicons Fonts Css -->
-<link rel="stylesheet" href="css/ionicons.min.css">
+<link rel="stylesheet" href="../css/ionicons.min.css">
 <!-- animate css -->
-<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="../css/animate.css">
 <!-- Hero area slider css-->
-<link rel="stylesheet" href="css/slider.css">
+<link rel="stylesheet" href="../css/slider.css">
 <!-- owl craousel css -->
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/jquery.fancybox.css">
+<link rel="stylesheet" href="../css/owl.carousel.css">
+<link rel="stylesheet" href="../css/owl.theme.css">
+<link rel="stylesheet" href="../css/jquery.fancybox.css">
 <!-- template main css file -->
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="../css/main.css">
 <!-- responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="../css/responsive.css">
 <!-- custom.css -->
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="../css/custom.css">
 
 <!-- Template Javascript Files
         ================================================== -->
@@ -75,7 +77,7 @@
 
 				<!-- logo -->
 				<div class="navbar-brand">
-					<a href="index.html"> <img src="images/logo.png" alt="">
+					<a href="index.jsp"> <img src="../images/logo.png" alt="">
 					</a>
 				</div>
 				<!-- /logo -->
@@ -101,8 +103,7 @@
 								<ul>
 									<li><a href="blog-fullwidth.html">Blog Full</a></li>
 									<li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-									<li><a href="blog-right-sidebar.html">Blog Right
-											sidebar</a></li>
+									<li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
 								</ul>
 							</div></li>
 					</ul>
@@ -145,7 +146,7 @@
 
                             -->
 						<img class="img-responsive" alt=""
-							src="images/animal/dog/dog_04.jpg">
+							src="../images/animal/dog/dog_04.jpg">
 					</div>
 					<div class="portfolio-content">
 						<p>테이블 만들고 보호중/찾는중 성별 대략적인 나이 중성화 몸무게 입양소 주소 입양소 이름 입양소 번호
@@ -228,7 +229,7 @@
 							<script>
 								/* static var result_row;
 								static var result_col; */
-								
+
 								var mapContainer = document
 										.getElementById('map'), // 지도를 표시할 div 
 								mapOption = {
@@ -239,24 +240,29 @@
 								};
 
 								// 지도를 생성합니다    
-								var map = new daum.maps.Map(mapContainer,mapOption);
+								var map = new daum.maps.Map(mapContainer,
+										mapOption);
 								// 지도 타입 변경 컨트롤을 생성한다
 								var mapTypeControl = new daum.maps.MapTypeControl();
 								// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
-								map.addControl(mapTypeControl, daum.maps.ControlPosition.TOPRIGHT);	
+								map.addControl(mapTypeControl,
+										daum.maps.ControlPosition.TOPRIGHT);
 								// 지도에 확대 축소 컨트롤을 생성한다
 								var zoomControl = new daum.maps.ZoomControl();
 								// 지도의 우측에 확대 축소 컨트롤을 추가한다
-								map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+								map.addControl(zoomControl,
+										daum.maps.ControlPosition.RIGHT);
 								// 주소-좌표 변환 객체를 생성합니다
 								var geocoder = new daum.maps.services.Geocoder();
 								// 지도 중심 좌표 변화 이벤트를 등록한다
-								daum.maps.event.addListener(map, 'center_changed', function () {
-									console.log('지도의 중심 좌표는 ' + map.getCenter().toString() +' 입니다.');
-								});
-								
+								daum.maps.event.addListener(map,
+										'center_changed', function() {
+											console.log('지도의 중심 좌표는 '
+													+ map.getCenter()
+															.toString()
+													+ ' 입니다.');
+										});
 
-								
 								///
 								///////callback 객체 생성
 								var callback = function(status, result) {
@@ -270,7 +276,7 @@
 											map : map,
 											position : coords
 										});
-										
+
 										// 인포윈도우로 장소에 대한 설명을 표시합니다
 										// db에서 위치 이름 가져오기
 										var infowindow = new daum.maps.InfoWindow(
@@ -282,13 +288,17 @@
 										// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
 										map.setCenter(coords);
 										// 지도 중심 좌표 변화 이벤트를 등록한다
-										daum.maps.event.addListener(map, 'center_changed', function () {
-											console.log('지도의 중심 좌표는 ' + map.getCenter().toString() +' 입니다.');
-											/* //result_row = map.getCenter().getLat().toString();
-											//result_col = map.getCenter().getLng().toString();
-											//document.write('<h1><a href=http://map.daum.net/link/to/대구시수의사회(더난),'+ result_row +','+ result_col +'>길찾기주소</h1>');
-											document.write('<h1><a href=http://map.daum.net/link/to/대구시수의사회(더난),'+ map.getCenter().getLat() +','+ map.getCenter().getLng() +'>길찾기주소</h1>'); */
-										});
+										daum.maps.event.addListener(map,
+												'center_changed', function() {
+													console.log('지도의 중심 좌표는 '
+															+ map.getCenter()
+																	.toString()
+															+ ' 입니다.');
+													/* //result_row = map.getCenter().getLat().toString();
+													//result_col = map.getCenter().getLng().toString();
+													//document.write('<h1><a href=http://map.daum.net/link/to/대구시수의사회(더난),'+ result_row +','+ result_col +'>길찾기주소</h1>');
+													document.write('<h1><a href=http://map.daum.net/link/to/대구시수의사회(더난),'+ map.getCenter().getLat() +','+ map.getCenter().getLng() +'>길찾기주소</h1>'); */
+												});
 									}
 								};
 								// 주소로 좌표를 검색합니다 //db에서 가져와 주소 붙여넣기
@@ -301,100 +311,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-	
-	<!--
-            ==================================================
-            댓글달기 섹션
-            ================================================== -->
-	<section id="call-to-action">
-		<div class="container">
-			<div class="row">
-				
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-<div class="container">
-    <div class="col-sm-8">
-        <div class="panel panel-white post panel-shadow">
-            <div class="post-heading">
-                <div class="pull-left image">
-                    <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
-                </div>
-                <div class="pull-left meta">
-                    <div class="title h5">
-                        <a href="#"><b>Ryan Haywood</b></a>
-                        made a post.
-                    </div>
-                    <h6 class="text-muted time">1 minute ago</h6>
-                </div>
-            </div> 
-            <div class="post-description">
-                <img src="http://www.animal.go.kr/files/shelter/2017/06/201707161007666.jpg"> 
-                <p>Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers</p>
-                <div class="stats">
-                    <a href="#" class="btn btn-default stat-item">
-                        <i class="fa fa-thumbs-up icon"></i>2
-                    </a>
-                    <a href="#" class="btn btn-default stat-item">
-                        <i class="fa fa-share icon"></i>12
-                    </a>
-                </div>
-            </div>
-            <div class="post-footer">
-                <div class="input-group"> 
-                    <input class="form-control" placeholder="Add a comment" type="text">
-                    <span class="input-group-addon">
-                        <a href="#"><i class="fa fa-edit"></i></a>  
-                    </span>
-                </div>
-                <ul class="comments-list">
-                    <li class="comment">
-                        <a class="pull-left" href="#">
-                            <img class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" alt="avatar">
-                        </a>
-                        <div class="comment-body">
-                            <div class="comment-heading">
-                                <h4 class="user">Gavino Free</h4>
-                                <h5 class="time">5 minutes ago</h5>
-                            </div>
-                            <p>Sure, oooooooooooooooohhhhhhhhhhhhhhhh</p>
-                        </div>
-                        <ul class="comments-list">
-                            <li class="comment">
-                                <a class="pull-left" href="#">
-                                    <img class="avatar" src="http://bootdey.com/img/Content/user_3.jpg" alt="avatar">
-                                </a>
-                                <div class="comment-body">
-                                    <div class="comment-heading">
-                                        <h4 class="user">Ryan Haywood</h4>
-                                        <h5 class="time">3 minutes ago</h5>
-                                    </div>
-                                    <p>Relax my friend</p>
-                                </div>
-                            </li> 
-                            <li class="comment">
-                                <a class="pull-left" href="#">
-                                    <img class="avatar" src="http://bootdey.com/img/Content/user_2.jpg" alt="avatar">
-                                </a>
-                                <div class="comment-body">
-                                    <div class="comment-heading">
-                                        <h4 class="user">Gavino Free</h4>
-                                        <h5 class="time">3 minutes ago</h5>
-                                    </div>
-                                    <p>Ok, cool.</p>
-                                </div>
-                            </li> 
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<h1>Pueden pasar por mi WebSite, Hay mas elementos utiles <a href="http://programarlaweb.com/">WEBSITE</a></h1>
-
 			</div>
 		</div>
 	</section>

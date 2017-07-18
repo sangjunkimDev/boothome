@@ -1,79 +1,5 @@
 @CHARSET "UTF-8";
-
-/* #animal-tr-index {
-	width: 380px;
-}
-#animal-td-index{
-	width: 380px;
-}
-#animal-tr-shop {
-	width: 350px;
-}
-#animal-td-shop{
-	width: 350px;
-}
-
-#custom-block {
-	display: inline-block;
-	padding-left: 20px;
-}
-
-
-#custom-container {
-	text-align: center;
-}
-@media ( min-width : 992px) {
-	.col-md-3-c {
-		position: relative;
-		min-height: 1px;
-		padding-right: 15px;
-		padding-left: 15px;
-		float: left;
-	}
-}
-
-.list-group-item {
-	text-align: center;
-}
-
-
-@media ( max-width : 640px ) {
-	#animal, #animal thead, #animal tbody, #animal tr, #animal th,
-		#animal td {
-		display: block;
-	}
-	#animal tr {
-		border-bottom: 1px solid #ddd;
-	}
-	#animal th, #animal td {
-		border-top: none;
-		border-bottom: none;
-	}
-	#animal {
-	margin-left: -15px;
-	margin-right: -15px;
-	}
-}
-
-@media (min-width: 992px)
-.col-md-9-c {
-    width: 75%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.col-md-9-c {
-	position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-} */
-
-/* 
-http://webdir.tistory.com/487
- */
+/* 사진 띄워주는 css */
 .thumbnail-wrappper {
 	width: 25%;
 }
@@ -106,3 +32,49 @@ http://webdir.tistory.com/487
 	transform: translate(-50%, -50%);
 }
 
+/* 로그인 css */
+.modal-header h4{
+	background-color: #02bdd5;
+	color: white !important;
+	text-align: center;
+	font-size: 30px;
+}
+.modal-dialog {
+	margin-top: 0px;
+}
+.modal-footer {
+	background-color: #02bdd5;
+}
+#login_face{
+	background-color: rgb(2, 89, 213);
+}
+#myModal{
+	padding-top: 120px;
+}
+.close {
+	background-color: #02bdd5;
+	color: black !important;
+	text-align: center;
+	font-size: 30px;
+	padding-right: 3px;
+	padding-top: 3px;
+}
+
+/* 회원가입*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* { font-family: 'Nanum Gothic', sans-serif; }
+
+.spaceLeft {
+  margin-left: 10px;
+}
+.spaceRight {
+  margin-right: 10px;
+}
+
+/* custom checkbox */
+.btn span.fa {
+	opacity: 0;
+}
+.btn.active span.fa {
+	opacity: 1;
+}

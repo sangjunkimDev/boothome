@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -5,7 +7,7 @@
         ================================================== -->
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="../images/favicon.png">
 <title>Timer Agency Template</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -19,24 +21,24 @@
         ================================================== -->
 <!-- Twitter Bootstrs CSS -->
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 <!-- Ionicons Fonts Css -->
-<link rel="stylesheet" href="css/ionicons.min.css">
+<link rel="stylesheet" href="../css/ionicons.min.css">
 <!-- animate css -->
-<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="../css/animate.css">
 <!-- Hero area slider css-->
-<link rel="stylesheet" href="css/slider.css">
+<link rel="stylesheet" href="../css/slider.css">
 <!-- owl craousel css -->
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/jquery.fancybox.css">
+<link rel="stylesheet" href="../css/owl.carousel.css">
+<link rel="stylesheet" href="../css/owl.theme.css">
+<link rel="stylesheet" href="../css/jquery.fancybox.css">
 <!-- template main css file -->
-<link rel="stylesheet" href="css/main.css?ver=1">
+<link rel="stylesheet" href="../css/main.css?ver=1">
 <!-- responsive css -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="../css/responsive.css">
 
 <!-- 나만의 css -->
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="../css/custom.css">
 <!-- Template Javascript Files
         ================================================== -->
 <!-- modernizr js -->
@@ -48,7 +50,7 @@
 <script src="js/owl.carousel.min.js"></script>
 <!-- bootstrap js -->
 
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- wow js -->
 <script src="js/wow.min.js"></script>
 <!-- slider js -->
@@ -56,6 +58,13 @@
 <script src="js/jquery.fancybox.js"></script>
 <!-- template main js -->
 <script src="js/main.js"></script>
+<script>
+		$(document).ready(function() {
+			$("#myBtn").click(function() {
+				$("#myModal").modal();
+			});
+		});
+</script>
 </head>
 <body>
 	<!--
@@ -76,7 +85,7 @@
 
 				<!-- logo -->
 				<div class="navbar-brand">
-					<a href="index.html"> <img src="images/logogo.png" alt="">
+					<a href="index.jsp"> <img src="../images/logogo.png" alt="">
 					</a>
 				</div>
 				<!-- /logo -->
@@ -146,16 +155,123 @@
 							 가입하는 사이트로 연결 
 							 현재는 목록사이트임
 							 -->
-						<a href="http://localhost:8523/boothome/shophome.html"
-							data-wow-delay=".9s" data-section="#works"
-							class="btn-lines dark light wow fadeInUp btn btn-default btn-green">
-							로그인하고 더 많은 동물 보러가기!</a>
+						<a href="signup.jsp" data-wow-delay=".9s"
+							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green">
+							가입하고 더 많은 동물 보러가기!</a>
+							
+							
+							
+							
+							
+							
+		<!-- Trigger the modal with a button -->
+		<button type="button" class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" id="myBtn">Login</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header" style="padding: 0px">
+						<button type="button" class="close" data-dismiss="modal" style="margin-top: 0px">&times;</button>
+						<h4>
+							<span class="glyphicon glyphicon-lock"></span> Login
+						</h4>
+					</div>
+					<div class="modal-body" style="padding: 40px 50px;">
+						<form role="form">
+							<div class="form-group">
+								<input type="text"
+									class="form-control" id="id" placeholder="ID를 입력하세요">
+							</div>
+							<div class="form-group">
+								<input
+									type="text" class="form-control" id="psw" placeholder="비밀번호를 입력하세요">
+							</div>
+							<button type="submit" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off"></span> Login
+							</button>
+							<button type="submit" id="login_face" class="btn btn-success btn-block">
+								<span class="glyphicon glyphicon-off"></span> Facebook Login
+							</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<p>
+							아직 가입안하셨나요? <a href="#">가입하기</a>
+						</p>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+							
+							
+							
+							
+							
+							
 							
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<!-- 	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="block wow fadeInUp" data-wow-delay=".3s">
+	Trigger the modal with a button
+						<button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+
+						Modal
+						<div class="modal fade" id="myModal" role="dialog">
+							<div class="modal-dialog">
+								Modal content
+								<div class="modal-content">
+									<div class="modal-header" style="padding: 35px 50px;">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4>
+											<span class="glyphicon glyphicon-lock"></span> Login
+										</h4>
+									</div>
+									<div class="modal-body" style="padding: 40px 50px;">
+										<form role="form">
+											<div class="form-group">
+												<label for="usrname"><span
+													class="glyphicon glyphicon-user"></span> ID</label> <input
+													type="text" class="form-control" id="id"
+													placeholder="ID를 입력하세요">
+											</div>
+											<div class="form-group">
+												<label for="psw"><span
+													class="glyphicon glyphicon-eye-open"></span> Password</label> <input
+													type="text" class="form-control" id="psw"
+													placeholder="비밀번호를 입력하세요">
+											</div>
+											<button type="submit" class="btn btn-success btn-block">
+												<span class="glyphicon glyphicon-off"></span> Login
+											</button>
+											<button type="submit" id="login_face"
+												class="btn btn-success btn-block">
+												<span class="glyphicon glyphicon-off"></span> Facebook Login
+											</button>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<p>
+											아직 가입안하셨나요? <a href="#">가입하기</a>
+										</p>
+										<p>
+											비밀번호를 잊어버리셨나요? <a href="#">비밀번호찾기</a>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+	</div></div></div></div></section> -->
+
 	<!--
             ==================================================
             Slider Section Start
@@ -197,211 +313,45 @@
 				</p>
 			</div>
 			<div class="row">
-				<!-- 
-			
-			<div class="row"> 안에 있는것들
-			for문 돌리기!!!!!
-			5행 3열
-			3번째 열은 무조건 <br>태그가 2개 더 들어가야됨
-			<figcaption>
-			<h4>
-			<br><br>
-			<a href="#"> 골든 리트리버 </a>
-			</h4>
-			<br>
-			<p>경기도 고양시 덕양구 고양대로 1695 (원흥동, 고양시 농업기술센터) 고양시동물보호센터</p>
-			</figcaption>
-			
-			<figcaption>
-			<h4>
-			<br><br><br>
-			<a href="#"> 보호중 </a>
-			</h4>
-			<br><br>
-			<p>경기도 고양시 덕양구 고양대로 1695 (원흥동, 고양시 농업기술센터) 고양시동물보호센터</p>
-			</figcaption>
-			  -->
+
+				<%
+					int i = 0;
+					for (i = 0; i < 15; i++) {
+				%>
 				<div class="col-sm-4 col-xs-12">
 					<figure class="wow fadeInLeft animated portfolio-item"
 						data-wow-duration="500ms" data-wow-delay="0ms">
 						<div class="thumbnail-wrapper">
 							<div class="thumbnail">
 								<div class="centered">
-									<img src="images/animal/dog/dog_04.jpg" class="img-responsive"
-										alt="this is a title">
-
+									<%-- <%db에서 받은 이미지 경로추가%> --%>
+									<img src="../images/animal/dog/dog_04.jpg"
+										class="img-responsive" alt="this is a title">
 								</div>
 								<figcaption>
 									<h4>
-										<br> <br> <a href="single-portfolio.html"> 골든 리트리버 </a>
+										<br> <br> <br> <br> <br> <br>
+										<%-- 
+										<% if(로그인이 되있으면 <a href="portfolio.jsp">
+										아니라면 가입 하는 페이지로 보내기%> 
+										--%>
+										<a href="portfolio.jsp"> 보호중</a>
 									</h4>
 									<br>
 									<p>경기도 고양시 덕양구 고양대로 1695 (원흥동, 고양시 농업기술센터) 고양시동물보호센터</p>
+									<%
+										if (i % 3 == 2) {
+												out.print("<br><br>");
+											}
+									%>
 								</figcaption>
 							</div>
 						</div>
 					</figure>
 				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_06.jpg">
-								</div>
-								<figcaption>
-									<h4>
-										<br> <br> <a href="#">보호중 찾는중 </a>
-									</h4>
-									<br>
-									<p>경기도 고양시 덕양구 고양대로 1695 (원흥동, 고양시 농업기술센터) 고양시동물보호센터</p>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_05.jpg" class="img-responsive"
-										alt="this is a title">
-
-								</div>
-								<figcaption>
-									<h4>
-										<br> <br> <br> <a href="#"> 보호중 </a>
-									</h4>
-									<br>
-									<p>경기도 고양시 덕양구 고양대로 1695 (원흥동, 고양시 농업기술센터) 고양시동물보호센터</p>
-									 <br>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_05.jpg" class="img-responsive"
-										alt="this is a title">
-
-								</div>
-								<figcaption>
-									<h4>
-										<a href="#"> 골든 리트리버 </a>
-									</h4>
-									<p>경기도 안성시 봉남동 326-2</p>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_02.jpg">
-								</div>
-								<figcaption>
-									<h4>
-										<a href="#">보호중 찾는중 </a>
-									</h4>
-									<p>부산광역시</p>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_05.jpg" class="img-responsive"
-										alt="this is a title">
-
-								</div>
-								<figcaption>
-									<h4>
-										<br> <a href="#"> 보호중 </a>
-									</h4>
-									<br>
-									<p>경기도 고양시</p>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_05.jpg" class="img-responsive"
-										alt="this is a title">
-
-								</div>
-								<figcaption>
-									<h4>
-										<a href="#"> 골든 리트리버 </a>
-									</h4>
-									<p>경기도 안성시 봉남동 326-2</p>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_02.jpg">
-								</div>
-								<figcaption>
-									<h4>
-										<a href="#">보호중 찾는중 </a>
-									</h4>
-									<p>부산광역시</p>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<figure class="wow fadeInLeft animated portfolio-item"
-						data-wow-duration="500ms" data-wow-delay="0ms">
-						<div class="thumbnail-wrapper">
-							<div class="thumbnail">
-								<div class="centered">
-									<img src="images/animal/cat/cat_05.jpg" class="img-responsive"
-										alt="this is a title">
-
-								</div>
-								<figcaption>
-									<h4>
-										<br> <a href="#"> 보호중 </a>
-									</h4>
-									<br>
-									<p>경기도 고양시</p>
-								</figcaption>
-							</div>
-						</div>
-					</figure>
-				</div>
-
+				<%
+					}
+				%>
 			</div>
 		</div>
 	</section>
