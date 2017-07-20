@@ -49,7 +49,8 @@
 	background-color: rgb(2, 89, 213);
 }
 #myModal{
-	padding-top: 120px;
+	padding-top: 0px;
+	height:520px;
 }
 .close {
 	background-color: #02bdd5;

@@ -1,3 +1,5 @@
+<%@page import="java.io.Console"%>
+<%@page import="com.sun.xml.internal.txw2.Document"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +10,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="icon" type="image/png" href="../images/favicon.png">
-<title>Timer Agency Template</title>
+<title>HappyPuppy</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
@@ -21,7 +23,7 @@
         ================================================== -->
 <!-- Twitter Bootstrs CSS -->
 
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
 <!-- Ionicons Fonts Css -->
 <link rel="stylesheet" href="../css/ionicons.min.css">
 <!-- animate css -->
@@ -42,89 +44,55 @@
 <!-- Template Javascript Files
         ================================================== -->
 <!-- modernizr js -->
-<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="../js/vendor/modernizr-2.6.2.min.js"></script>
 <!-- jquery -->
+<script src="../js/jquery.min.js"></script>
 <script
-	src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- owl carouserl js -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
 <!-- bootstrap js -->
 
 <script src="../js/bootstrap.min.js"></script>
 <!-- wow js -->
-<script src="js/wow.min.js"></script>
+<script src="../js/wow.min.js"></script>
 <!-- slider js -->
-<script src="js/slider.js"></script>
-<script src="js/jquery.fancybox.js"></script>
+<script src="../js/slider.js"></script>
+<script src="../js/jquery.fancybox.js"></script>
 <!-- template main js -->
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 <script>
-		$(document).ready(function() {
-			$("#myBtn").click(function() {
-				$("#myModal").modal();
-			});
+	$(document).ready(function() {
+		$("#myBtn").click(function() {
+			$("#myModal").modal();
 		});
+
+	});
 </script>
+<style>
+</style>
 </head>
 <body>
-	<!--
-        ==================================================
-        Header Section Start
-        ================================================== -->
-	<header id="top-bar" class="navbar-fixed-top animated-header">
-		<div class="container">
-			<div class="navbar-header">
-				<!-- responsive nav button -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<!-- /responsive nav button -->
+	<%@
+	include file="./header.jsp"
+	
+	%>
+<!-- String sessionS = (String) session.getAttribute("SESSION"); -->
+<!-- 
 
-				<!-- logo -->
-				<div class="navbar-brand">
-					<a href="index.jsp"> <img src="../images/logogo.png" alt="">
-					</a>
-				</div>
-				<!-- /logo -->
-			</div>
-			<!-- main menu -->
-			<nav class="collapse navbar-collapse navbar-right" role="navigation">
-				<div class="main-menu">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="service.html">Service</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Pages <span class="caret"></span></a>
-							<div class="dropdown-menu">
-								<ul>
-									<li><a href="404.html">404 Page</a></li>
-									<li><a href="gallery.html">Gallery</a></li>
-								</ul>
-							</div></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Blog <span class="caret"></span></a>
-							<div class="dropdown-menu">
-								<ul>
-									<li><a href="blog-fullwidth.html">Blog Full</a></li>
-									<li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-									<li><a href="blog-right-sidebar.html">Blog Right
-											sidebar</a></li>
-								</ul>
-							</div>
-					</ul>
-				</div>
-			</nav>
-			<!-- /main nav -->
-		</div>
-	</header>
-
+if(session==null) {//로그아웃 상태
+	
+}
+else {//로그인 상태
+	
+}
+session.removeAttribute("SESSION");
+session.invalidate();
+ -->
 	<!--
         ==================================================
         Slider Section Start
+        로그아웃에서 세션 종료하는 거 만들기
         ================================================== -->
 	<section id="hero-area">
 		<div class="container">
@@ -137,7 +105,7 @@
 							<h1 class="wow fadeInUp animated cd-headline slide"
 								data-wow-delay=".4s">
 								<span>반갑습니다</span> <span class="cd-words-wrapper"> <b
-									class="is-visible">고양이집사</b> <b>강아지집사</b> <b>개성파 집사</b>
+									class="is-visible">고양이 집사</b> <b>강아지 집사</b> <b>개성파 집사</b>
 								</span> <span>여러분</span><br>
 							</h1>
 						</section>
@@ -150,106 +118,61 @@
 						<a
 							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
 							data-wow-delay=".9s" href="#works" data-section="#works"> 새로온
-							동물 보러가기!</a>
-						<!-- custom
-							 가입하는 사이트로 연결 
-							 현재는 목록사이트임
-							 -->
-						<a href="signup.jsp" data-wow-delay=".9s"
-							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green">
-							가입하고 더 많은 동물 보러가기!</a>
-							
-							
-							
-							
-							
-							
-		<!-- Trigger the modal with a button -->
-		<button type="button" class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green" id="myBtn">Login</button>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header" style="padding: 0px">
-						<button type="button" class="close" data-dismiss="modal" style="margin-top: 0px">&times;</button>
-						<h4>
-							<span class="glyphicon glyphicon-lock"></span> Login
-						</h4>
-					</div>
-					<div class="modal-body" style="padding: 40px 50px;">
-						<form role="form">
-							<div class="form-group">
-								<input type="text"
-									class="form-control" id="id" placeholder="ID를 입력하세요">
-							</div>
-							<div class="form-group">
-								<input
-									type="text" class="form-control" id="psw" placeholder="비밀번호를 입력하세요">
-							</div>
-							<button type="submit" class="btn btn-success btn-block">
-								<span class="glyphicon glyphicon-off"></span> Login
-							</button>
-							<button type="submit" id="login_face" class="btn btn-success btn-block">
-								<span class="glyphicon glyphicon-off"></span> Facebook Login
-							</button>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<p>
-							아직 가입안하셨나요? <a href="#">가입하기</a>
-						</p>
-					</div>
-				</div>
-			
-		</div>
-	</div>
-							
-							
-							
-							
-							
-							
-							
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- 	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<div class="block wow fadeInUp" data-wow-delay=".3s">
-	Trigger the modal with a button
-						<button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-
-						Modal
+							동물 보러가기!</a> <a href="./signup.jsp" data-wow-delay=".9s"
+							class="btn-lines dark light wow fadeInUp btn btn-green"> 가입하고
+							더 많은 동물 보러가기!</a>
+						<!--
+						슬라이더 버튼 
+						-->
+						<!-- Trigger the modal with a button -->
+						<button type="button" data-wow-delay=".9s"
+							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
+							id="myBtn" 
+							<%
+								if(sessionS==null) {//로그아웃상태
+									out.print("style='display:inline-block;'");
+								}
+								else {//로그인상태
+									out.print("style='display:none;'");
+								}
+								%>
+							>Login</button>
+						
+						<a href="list.jsp"><button type="button" data-wow-delay=".9s"
+								id="logout" onclick="location.href='signup.jsp'"
+								class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
+								<%
+								if(sessionS==null) {//로그아웃 상태
+								out.print("style='display:none;'");
+								}
+								else {
+									out.print("style='display:inline-block;'");
+								}
+								%>>
+								Logout</button></a>
+						<!-- Modal -->
 						<div class="modal fade" id="myModal" role="dialog">
 							<div class="modal-dialog">
-								Modal content
+								<!-- Modal content-->
 								<div class="modal-content">
-									<div class="modal-header" style="padding: 35px 50px;">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<div class="modal-header" style="padding: 0px">
+										<button type="button" class="close" data-dismiss="modal"
+											style="margin-top: 0px">&times;</button>
 										<h4>
 											<span class="glyphicon glyphicon-lock"></span> Login
 										</h4>
 									</div>
 									<div class="modal-body" style="padding: 40px 50px;">
-										<form role="form">
+										<form role="form" action="http://52.78.31.250:8080/WebProject2/login.puppy"  method="post" >
 											<div class="form-group">
-												<label for="usrname"><span
-													class="glyphicon glyphicon-user"></span> ID</label> <input
-													type="text" class="form-control" id="id"
-													placeholder="ID를 입력하세요">
+												<input type="text" class="form-control" id="email"
+													name="email" placeholder="email을 입력하세요">
 											</div>
 											<div class="form-group">
-												<label for="psw"><span
-													class="glyphicon glyphicon-eye-open"></span> Password</label> <input
-													type="text" class="form-control" id="psw"
-													placeholder="비밀번호를 입력하세요">
+												<input type="text" class="form-control" id="password"
+													name="password" placeholder="비밀번호를 입력하세요">
 											</div>
+
 											<button type="submit" class="btn btn-success btn-block">
 												<span class="glyphicon glyphicon-off"></span> Login
 											</button>
@@ -261,44 +184,17 @@
 									</div>
 									<div class="modal-footer">
 										<p>
-											아직 가입안하셨나요? <a href="#">가입하기</a>
-										</p>
-										<p>
-											비밀번호를 잊어버리셨나요? <a href="#">비밀번호찾기</a>
+											아직 가입안하셨나요? <a href="signup.jsp">가입하기</a>
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-	</div></div></div></div></section> -->
-
-	<!--
-            ==================================================
-            Slider Section Start
-            ================================================== -->
-	<!--
-	<section id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-sm-6">
-					<div class="block wow fadeInLeft" data-wow-delay=".3s"
-						data-wow-duration="500ms">
-						<h2>설문 조사를 하셔야 더 많은 동물을 볼수 있어요!</h2>
-						<p>하하하하하하</p>
-						<p>호호호호호호</p>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<div class="block wow fadeInRight" data-wow-delay=".3s"
-						data-wow-duration="500ms">
-						<img src="images/about/about2.jpg" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	 -->
-	<!-- /#about -->
 	<!--
             ==================================================
             Portfolio Section Start
@@ -356,39 +252,7 @@
 		</div>
 	</section>
 	<!-- #works -->
-
-	<!--
-            ==================================================
-            Footer Section Start
-            ================================================== -->
-	<footer id="footer">
-		<div class="container">
-			<div class="col-md-8">
-				<p class="copyright">
-					Copyright: <span>2015</span> . Design and Developed by <a
-						href="http://www.Themefisher.com">Themefisher</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<!-- Social Media -->
-				<ul class="social">
-					<li><a href="http://wwww.fb.com/themefisher" class="Facebook">
-							<i class="ion-social-facebook"></i>
-					</a></li>
-					<li><a href="http://wwww.twitter.com/themefisher"
-						class="Twitter"> <i class="ion-social-twitter"></i>
-					</a></li>
-					<li><a href="#" class="Linkedin"> <i
-							class="ion-social-linkedin"></i>
-					</a></li>
-					<li><a href="http://wwww.fb.com/themefisher"
-						class="Google Plus"> <i class="ion-social-googleplus"></i>
-					</a></li>
-				</ul>
-			</div>
-		</div>
-	</footer>
-	<!-- /#footer -->
-
+	<!-- footer -->
+	<%@ include file="./footer.jsp"%>
 </body>
 </html>

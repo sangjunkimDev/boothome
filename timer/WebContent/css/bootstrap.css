@@ -1783,7 +1783,7 @@ pre code {
     width: 41.66666667%;
   }
   .col-sm-4 {
-    width: 100%;
+    width: 33.33333333%;
   }
   .col-sm-3 {
     width: 25%;
@@ -5754,7 +5754,7 @@ button.close {
   top: 0;
   right: 0;
   left: 0;
-  background-color: #000;
+  
 }
 .modal-backdrop.fade {
   filter: alpha(opacity=0);

@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>bootstrap template</title>
+<title>회원가입</title>
 
 <!-- Bootstrap -->
 <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -15,10 +15,9 @@
 <link rel="stylesheet" href="../css/custom.css" media="screen"
 	title="no title" charset="utf-8">
 <script src="../js/bootstrap.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
-	// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+	// 필수 입력정보가 입력되었는지 확인하는 함수들
 	function checkValue() {
 		if (!document.user.email.value) {
 			alert("이메일을 입력하세요.");
@@ -41,28 +40,54 @@
 			alert("생년월일을 입력하세요.");
 			return false;
 		}
-	}
-</script>
 
+	}
+	
+	// AJAX 연습
+	$(function() {
+		$("#emailcheck").click(function() {
+			$.ajax({
+				url : "../checkemail.TestServlet",
+				data : {
+					"email" : $("#email").val()
+				},//보내는 데이터
+				dataType : "text",//가지고 오는 데이터의 타입//"json", "xml" 도 가능
+				success : function(data) {//호출 성공시
+					console.log("success");
+					console.log(data);
+					if(data==0)
+						$("#checkresult").html("중복됨").css("color","red");
+					else
+						$("#checkresult").html("사용가능").css("color","blue");
+				},
+				error : function() {//호출 실패시
+					console.log("error");
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body>
-
-	<form method="post" action="shophome.jsp" name="user"
-		onsubmit="return checkValue()">
+	<form action="surveytest.jsp" method="post" name="user"
+		onsubmit="return checkValue()" enctype="multipart/form-data">
 		<article class="container">
 			<div class="page-header">
 				<h1>회원가입</h1>
 			</div>
 			<div class="col-md-6 col-md-offset-3">
 				<form role="form">
+				<!-- method="post" action="surveytest2.jsp"    -->
 					<div class="form-group">
 						<label for="InputEmail">*이메일 주소</label> <input type="email"
-							class="form-control" id="email" placeholder="이메일 주소"
+							class="form-control" name="email" id="email" placeholder="이메일 주소"
 							maxlength="50">
+							<input type="button" value="중복확인" id="emailcheck">
+							<span id="checkresult"></span>
 					</div>
 					<div class="form-group">
 						<label for="InputPassword1">*비밀번호</label> <input type="password"
-							class="form-control" id="password" placeholder="비밀번호"
+							class="form-control" id="password" name="password" placeholder="비밀번호"
 							maxlength="50">
 					</div>
 					<div class="form-group">
@@ -73,23 +98,23 @@
 					</div>
 					<div class="form-group">
 						<label for="username">*이름</label> <input type="text"
-							class="form-control" id="name" placeholder="이름을 입력해 주세요"
+							class="form-control" name="name" placeholder="이름을 입력해 주세요"
 							maxlength="50">
 					</div>
 					<div class="form-group">
 						<label for="username">*성별</label> <input type="radio"
-							name="gender" value="남" checked>남 <input type="radio"
-							name="gender" value="여">여
+							name="gender" value="male" checked>남 <input type="radio"
+							name="gender" value="female">여
 					</div>
 					<div class="form-group">
 						<label for="username">*생년월일</label> <input type="text"
-							class="form-control" id="birth" placeholder="예)20101213"
+							class="form-control" id="birth" name="born" placeholder="예)20101213"
 							maxlength="8">
 					</div>
 					<div class="form-group">
 						<label for="username">프로필사진</label> <input type="file"
-							class="form-control" id="profile_photo" maxlength="200">
-					</div>
+							class="form-control" name="profile" maxlength="200">
+					</div>					
 					<div class="form-group text-center">
 						<button type="submit" class="btn btn-info" id="regist">
 							회원가입<i class="fa fa-check spaceLeft"></i>

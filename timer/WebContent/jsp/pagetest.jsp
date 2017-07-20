@@ -46,8 +46,10 @@
   <h2>Pagination</h2>
   <p>The .pagination class provides pagination links:</p>                  
   <ul class="pagination">
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
+    <li><a href="#" style="color:red; font-size: 33px;">1</a></li>
+    <li><a href="#" 
+    <% out.print("style='color:red;'"); %>
+    >2</a></li>
     <li><a href="#">3</a></li>
     <li><a href="#">4</a></li>
     <li><a href="#">5</a></li>
