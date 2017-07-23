@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="icon" type="image/png" href="images/favicon.png">
-<title>많은 동물 보기</title>
+<title>동물상세정보</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
@@ -41,80 +41,83 @@
 <!-- Template Javascript Files
         ================================================== -->
 <!-- modernizr js -->
-<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="../js/vendor/modernizr-2.6.2.min.js"></script>
 <!-- jquery -->
-<script
-	src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <!-- owl carouserl js -->
-<script src="js/owl.carousel.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
 <!-- bootstrap js -->
 
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- wow js -->
-<script src="js/wow.min.js"></script>
+<script src="../js/wow.min.js"></script>
 <!-- slider js -->
-<script src="js/slider.js"></script>
-<script src="js/jquery.fancybox.js"></script>
+<script src="../js/slider.js"></script>
+<script src="../js/jquery.fancybox.js"></script>
 <!-- template main js -->
-<script src="js/main.js"></script>
-</head>
-<body>
-	<!--
-        ==================================================
-        Header Section Start
-        ================================================== -->
-	<header id="top-bar" class="navbar-fixed-top animated-header">
-		<div class="container">
-			<div class="navbar-header">
-				<!-- responsive nav button -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<!-- /responsive nav button -->
+<script src="../js/main.js"></script>
+<!-- 변경시작점========================================================================== -->
+<!-- <script>
+	//----------?뒤에있는 유기번호 파라미터 받아옴-----------------
+	var urldesertionNo = document.location.href.split("=");
+	var para = urldesertionNo[1];
+	console.log(para);
+	
+	"</div><div class='portfolio-content'><table border='1px' class='table_custom'>"
+	
+	$(document).ready(function() {
+		$.ajax({
+			url : "../writecomments.TestServlet", //수정필요 유기번호를 통해 전부다셀렉트하는 서비스로 전송
+			dataType : "json",//가지고 오는 데이터의 타입//"json", "xml" 도 가능
+			success : function(data) {//호출 성공시
+			console.log(data);
+			var str;
+			$.each(data, function(index, item) {
+				console.log(index);
+				console.log(item);
+				str = "<img class='img-responsive' alt='' src="+ item.Popfile +">"//이미지 url
+				+"</div><div class='portfolio-content'><table border='1px' id='table_custom'>";
+				str = str +"<tr><th><h4>발견날짜</h4></th><td><h4>" +item.happenDt "</h4></td>";
+				str = str +"<tr><th><h4>발견장소</h4></th><td><h4>" +item.happenPlace "</h4></td>";
+				str = str +"<tr><th><h4>상태</h4></th><td><h4>" +item.processState "</h4></td>";
+				str = str +"<tr><th><h4>성별</h4></th><td><h4>" +item.sexCd "</h4></td>";
+				str = str +"<tr><th><h4>중성화</h4></th><td><h4>" +item.neuterYn "</h4></td>";
+				str = str +"<tr><th><h4>나이</h4></th><td><h4>" +item.age "</h4></td>";
+				str = str +"<tr><th><h4>몸무게</h4></th><td><h4>" +item.weight "</h4></td>";
+				str = str +"<tr><th><h4>색깔</h4></th><td><h4>" +item.colorCd "</h4></td>";
+				str = str +"<tr><th><h4>특징</h4></th><td><h4>" +item.specialMark "</h4></td>";
+				str = str +"<tr><th><h4>보호소이름</h4></th><td><h4>" +item.careNm "</h4></td>";
+				</tr>
+				str = str +
+				$("#mainmaker").html(str+"</table></div></div></div></div></section>";
+						
+				);
+			});
+			},
+			error : function() {
+				console.log("error");
+			}
+		});
+	});
+</script> -->
 
-				<!-- logo -->
-				<div class="navbar-brand">
-					<a href="index.jsp"> <img src="../images/logo.png" alt="">
-					</a>
-				</div>
-				<!-- /logo -->
-			</div>
-			<!-- main menu -->
-			<nav class="collapse navbar-collapse navbar-right" role="navigation">
-				<div class="main-menu">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="service.html">Service</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Pages <span class="caret"></span></a>
-							<div class="dropdown-menu">
-								<ul>
-									<li><a href="404.html">404 Page</a></li>
-									<li><a href="gallery.html">Gallery</a></li>
-								</ul>
-							</div></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Blog <span class="caret"></span></a>
-							<div class="dropdown-menu">
-								<ul>
-									<li><a href="blog-fullwidth.html">Blog Full</a></li>
-									<li><a href="blog-left-sidebar.html">Blog Left sidebar</a></li>
-									<li><a href="blog-right-sidebar.html">Blog Right sidebar</a></li>
-								</ul>
-							</div></li>
-					</ul>
-				</div>
-			</nav>
-			<!-- /main nav -->
-		</div>
-	</header>
+<%@page import="java.util.ArrayList" %>
+<%@page import="java.util.HashMap" %>
+<%@page import="java.util.List" %>
+<%@page import="java.util.Map" %>
+</head>
+<!-- 변경끝점========================================================================== -->
+<body>
+<%@ include file="./header.jsp" %>
+<%-- <% 
+List<Map<String,String>> list=(List<Map<String,String>>)request.getAttribute("list"); 
+	for(int i =0; i<list.size();i++){
+		out.print(list.get(i));
+	}
+%> --%>
 	<!--
         ==================================================
-        Global Page Section Start
+       	header Section Start
         ================================================== -->
 	<section class="global-page-header">
 		<div class="container">
@@ -122,10 +125,9 @@
 				<div class="col-md-12">
 					<div class="block">
 						<h3>새로운 동물 친구를 소개합니다</h3>
-						<div class="portfolio-meta">
+						<div class="portfolio-meta" id="headervoid">
 							<span> 등록일 : 태그쓰고 db에서 가져오기</span>| <span> 보호중: 태그써서 db에서
-								가져오기</span>| <span><a href="http://www.naver.com">회원가입</a></span>
-							<!-- custom 회원가입 a태그 링크 바꾸기 및 밑줄 만드는 css만들기-->
+								가져오기</span>| <span><a href="signup.jsp">회원가입</a></span>
 						</div>
 					</div>
 				</div>
@@ -138,21 +140,69 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="portfolio-single-img">
+					<div class="portfolio-single-img" id="mainmaker">
 						<!-- 
 						custom
 						
-						src="images/portfolio/post-1.jpg" 의 이미지를 가져오기 db에서 아마도 동적이니 자바스크립트? 
-
+						src="images/portfolio/post-1.jpg" 의 이미지를 가져오기 jsp사용 
+					
                             -->
 						<img class="img-responsive" alt=""
 							src="../images/animal/dog/dog_04.jpg">
 					</div>
 					<div class="portfolio-content">
-						<p>테이블 만들고 보호중/찾는중 성별 대략적인 나이 중성화 몸무게 입양소 주소 입양소 이름 입양소 번호
-							발견장소 날짜 색깔 특징은 아무래도 자료마다 다르므로 전화로 물어보라고 하기?</p>
+							<table border="1px" id="table_custom">
+							<tr>
+							<th><h4>발견날짜</h4></th>
+							<td><h4>item.happenDt</h4></td>
+							</tr>
+							<tr>
+							<th><h4>발견장소</h4></th>
+							<td><h4>item.happenPlace</h4></td>
+							</tr>
+							<tr>
+							<th><h4>상태</h4></th>
+							<td><h4>item.processState</h4></td>
+							</tr>
+							<tr>
+							<th><h4>성별</h4></th>
+							<td><h4>item.sexCd</h4></td>
+							</tr>
+							<tr>
+							<th><h4>중성화</h4></th>
+							<td><h4>item.neuterYn</h4></td>
+							</tr>
+							<tr>
+							<th><h4>나이</h4></th>
+							<td><h4>item.age</h4></td>
+							</tr>
+							<tr>
+							<th><h4>몸무게</h4></th>
+							<td><h4>item.weight<h4></td>
+							</tr>
+							<tr>
+							<th><h4>색깔</h4></th>
+							<td><h4>item.colorCd</h4></td>
+							</tr>
+							<tr>
+							<th><h4>특징</h4></th>
+							<td><h4>item.specialMark</h4></td>
+							</tr>
+							<tr>
+							<th><h4>보호소이름</h4></th>
+							<td><h4>item.careNm</h4></td>
+							
+							</tr>
+							<tr>
+							<th><h4>보호소주소</h4></th>
+							<td><h4>item.careAddr</h4></td>
+							</tr>
+							<tr>
+							<th><h4>보호소번호</h4></th>
+							<td><h4>item.careTel</h4></td>
+							</tr>
+							</table>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -328,10 +378,10 @@
 							data-wow-duration="300ms">이 친구를 입양받고 싶나요?</h2>
 						<p class="wow fadeInDown" data-wow-delay=".5s"
 							data-wow-duration="300ms">
-							아래의 번호로 전화해주세요.<br>010-7278-7472
+							아래의 번호로 전화해주세요.<br>010-1234-5678
 						</p>
 						<a href="#" class="btn btn-default btn-contact wow fadeInDown"
-							data-wow-delay=".7s" data-wow-duration="300ms">010-7278-7472</a>
+							data-wow-delay=".7s" data-wow-duration="300ms">041-7123-7456</a>
 					</div>
 				</div>
 
@@ -380,43 +430,8 @@
 		</div>
 	</section>
 
-
-
-	<!--
-            ==================================================
-            Footer Section Start
-            이건 건드려도 되는건지 아닌지 잘모르겠어서 냅둠
-            저작권..?
-            ================================================== -->
-	<footer id="footer">
-		<div class="container">
-			<div class="col-md-8">
-				<p class="copyright">
-					Copyright: <span>2015</span> . Design and Developed by <a
-						href="http://www.Themefisher.com">Themefisher</a>
-				</p>
-			</div>
-			<div class="col-md-4">
-				<!-- Social Media -->
-				<ul class="social">
-					<li><a href="#" class="Facebook"> <i
-							class="ion-social-facebook"></i>
-					</a></li>
-					<li><a href="#" class="Twitter"> <i
-							class="ion-social-twitter"></i>
-					</a></li>
-					<li><a href="#" class="Linkedin"> <i
-							class="ion-social-linkedin"></i>
-					</a></li>
-					<li><a href="#" class="Google Plus"> <i
-							class="ion-social-googleplus"></i>
-					</a></li>
-
-				</ul>
-			</div>
-		</div>
-	</footer>
-	<!-- /#footer -->
+	<!-- footer -->
+	<%@ include file="./footer.jsp"%>
 
 </body>
 </html>

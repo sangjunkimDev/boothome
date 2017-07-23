@@ -47,8 +47,6 @@
 <script src="../js/vendor/modernizr-2.6.2.min.js"></script>
 <!-- jquery -->
 <script src="../js/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- owl carouserl js -->
 <script src="../js/owl.carousel.min.js"></script>
 <!-- bootstrap js -->
@@ -62,23 +60,58 @@
 <!-- template main js -->
 <script src="../js/main.js"></script>
 <script>
+//--------------------------변경시작점---------------------------------------------------------------------------------------
 	$(document).ready(function() {
 		$("#myBtn").click(function() {
 			$("#myModal").modal();
+			$("#email").focusout(function() {
+				if ($("#email").val() == "") {
+					$("#emailnull").html("<h4>아이디를 입력하세요</h4>").css("color","red");
+					event.preventDefault();
+				}
+			});
+			$("#password").focusout(function() {
+				if ($("#password").val() == "") {
+					$("#passwordnull").html("<h4>비밀번호를 입력하세요</h4>").css("color","red");
+					event.preventDefault();
+				}
+			});
+			$("#form_login").submit(function(event) {
+				if (($("#email").val() == "") || ($("#password").val() == "")) {
+					event.preventDefault();
+					location.reload();	
+				} else {
+					$("#form_login").submit();
+				}
+			});
 		});
-
+		//==========모달로그인 끝=====================================================
+		//==========json 받기 시작=====================================================
+	
+		
+		
+		
+		
+		
+		
 	});
+	//--------------------------변경종료점--------------------------------------------------------------------------
 </script>
-<style>
-</style>
+<%@page import="java.util.ArrayList" %>
+<%@page import="java.util.HashMap" %>
+<%@page import="java.util.List" %>
+<%@page import="java.util.Map" %>
 </head>
 <body>
-	<%@
-	include file="./header.jsp"
-	
-	%>
-<!-- String sessionS = (String) session.getAttribute("SESSION"); -->
-<!-- 
+	<%@ include file="./header.jsp"%>
+<%-- 	<% 
+	List<Map<String,String>> list=(List<Map<String,String>>)request.getAttribute("list"); 
+	for(int i =0; i<list.size();i++){
+		out.print(list.get(i));
+	}
+%> --%>
+	<!-- String sessionS = (String) session.getAttribute("SESSION"); -->
+	<!-- 
 
 if(session==null) {//로그아웃 상태
 	
@@ -118,38 +151,47 @@ session.invalidate();
 						<a
 							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
 							data-wow-delay=".9s" href="#works" data-section="#works"> 새로온
-							동물 보러가기!</a> <a href="./signup.jsp" data-wow-delay=".9s"
-							class="btn-lines dark light wow fadeInUp btn btn-green"> 가입하고
-							더 많은 동물 보러가기!</a>
+							동물 보러가기!</a> <a
+							href="http://52.78.31.250:8080/WebProject2/register.puppy"
+							data-wow-delay=".9s"
+							class="btn-lines dark light wow fadeInUp btn btn-green"
+							<%if (sessionS == null) {//로그아웃상태
+				out.print("style='display:inline-block;'");
+			} else {//로그인상태
+				out.print("style='display:none;'");
+			}%>>가입하고
+							더 많은 동물 보러가기!</a> <a
+							href="http://52.78.31.250:8080/WebProject2/recommend.puppy"
+							data-wow-delay=".9s"
+							class="btn-lines dark light wow fadeInUp btn btn-green"
+							<%if (sessionS == null) {//로그아웃상태	
+				out.print("style='display:none;'");
+			} else {//로그인상태
+				out.print("style='display:inline-block;'");
+			}%>>더
+							많은 동물 보러가기!</a>
 						<!--
 						슬라이더 버튼 
 						-->
 						<!-- Trigger the modal with a button -->
 						<button type="button" data-wow-delay=".9s"
 							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
-							id="myBtn" 
-							<%
-								if(sessionS==null) {//로그아웃상태
-									out.print("style='display:inline-block;'");
-								}
-								else {//로그인상태
-									out.print("style='display:none;'");
-								}
-								%>
-							>Login</button>
-						
-						<a href="list.jsp"><button type="button" data-wow-delay=".9s"
-								id="logout" onclick="location.href='signup.jsp'"
-								class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
-								<%
-								if(sessionS==null) {//로그아웃 상태
-								out.print("style='display:none;'");
-								}
-								else {
-									out.print("style='display:inline-block;'");
-								}
-								%>>
-								Logout</button></a>
+							id="myBtn"
+							<%if (sessionS == null) {//로그아웃상태
+				out.print("style='display:inline-block;'");
+			} else {//로그인상태
+				out.print("style='display:none;'");
+			}%>>Login</button>
+
+						<button type="button" data-wow-delay=".9s" id="logout"
+							onclick="location.href='http://52.78.31.250:8080/WebProject2/logout.puppy'"
+							class="btn-lines dark light wow fadeInUp animated smooth-scroll btn btn-default btn-green"
+							<%if (sessionS == null) {//로그아웃 상태
+				out.print("style='display:none;'");
+			} else {
+				out.print("style='display:inline-block;'");
+			}%>>Logout</button>
+						</a>
 						<!-- Modal -->
 						<div class="modal fade" id="myModal" role="dialog">
 							<div class="modal-dialog">
@@ -163,16 +205,26 @@ session.invalidate();
 										</h4>
 									</div>
 									<div class="modal-body" style="padding: 40px 50px;">
-										<form role="form" action="http://52.78.31.250:8080/WebProject2/login.puppy"  method="post" >
+										<!-- 
+										
+										변경시작점	-----------------------------------------------------------
+										
+										-->
+										<form role="form"
+											action="http://52.78.31.250:8080/WebProject2/login.puppy"
+											method="post" 
+											id="form_login">
 											<div class="form-group">
 												<input type="text" class="form-control" id="email"
 													name="email" placeholder="email을 입력하세요">
 											</div>
+											<div id="emailnull" style="font-color:red"></div>
 											<div class="form-group">
-												<input type="text" class="form-control" id="password"
+												<input type="password" class="form-control" id="password"
 													name="password" placeholder="비밀번호를 입력하세요">
 											</div>
-
+											<div id="passwordnull" style="font-color:red"></div>
+											<div></div>
 											<button type="submit" class="btn btn-success btn-block">
 												<span class="glyphicon glyphicon-off"></span> Login
 											</button>
@@ -181,10 +233,16 @@ session.invalidate();
 												<span class="glyphicon glyphicon-off"></span> Facebook Login
 											</button>
 										</form>
+										<!-- 
+										
+										변경끝난점	------------------------------------------------------------------
+										
+										-->
 									</div>
 									<div class="modal-footer">
 										<p>
-											아직 가입안하셨나요? <a href="signup.jsp">가입하기</a>
+											아직 가입안하셨나요? <a
+												href="signup.jsp">가입하기</a>
 										</p>
 									</div>
 								</div>

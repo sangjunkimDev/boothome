@@ -15,7 +15,8 @@
 <link rel="stylesheet" href="../css/custom.css" media="screen"
 	title="no title" charset="utf-8">
 <script src="../js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- jquery -->
+<script src="../js/jquery.min.js"></script>
 <script type="text/javascript">
 	// 필수 입력정보가 입력되었는지 확인하는 함수들
 	function checkValue() {
@@ -47,7 +48,7 @@
 	$(function() {
 		$("#emailcheck").click(function() {
 			$.ajax({
-				url : "../checkemail.TestServlet",
+				url : "http://52.78.31.250:8080/WebProject2/register.puppy",
 				data : {
 					"email" : $("#email").val()
 				},//보내는 데이터
@@ -111,10 +112,10 @@
 							class="form-control" id="birth" name="born" placeholder="예)20101213"
 							maxlength="8">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="username">프로필사진</label> <input type="file"
 							class="form-control" name="profile" maxlength="200">
-					</div>					
+					</div>		 -->			
 					<div class="form-group text-center">
 						<button type="submit" class="btn btn-info" id="regist">
 							회원가입<i class="fa fa-check spaceLeft"></i>

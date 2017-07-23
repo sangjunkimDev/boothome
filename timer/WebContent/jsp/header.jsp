@@ -39,15 +39,22 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.jsp">Home</a></li>
 				<li><a href="surveytest.jsp">동물보기</a></li>
-				<li><a href="myhome.jsp" <%
-								if(sessionS!=null) {//로그인 상태
+				<li><a href="myhome.jsp" 
+				<%
+							if (sessionS == null) {//로그아웃상태
+								out.print("style='display:inline-block;'");
+							} else {//로그인상태
 								out.print("style='display:none;'");
-								}
-								else {
-									out.print("style='display:inline-block;'");
-								}
-								%>>관리자페이지</a></li>
-				<li><a href="signup.jsp">가입하기</a></li>
+				}%>
+				>관리자페이지</a></li>
+				<li><a href="signup.jsp"
+				<%
+							if (sessionS == null) {//로그아웃상태
+								out.print("style='display:inline-block;'");
+							} else {//로그인상태
+								out.print("style='display:none;'");
+				}%>
+				>가입하기</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Blog <span class="caret"></span></a>
 					<div class="dropdown-menu">

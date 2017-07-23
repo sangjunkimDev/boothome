@@ -79,3 +79,20 @@
 .btn.active span.fa {
 	opacity: 1;
 }
+
+/* custom table portfolio */
+#table_custom th {
+	background-color: #02bdd5;
+	color: white !important;
+	text-align: center;
+}
+#table_custom td {
+	background-color: #02bdd5;
+	color: white !important;
+	text-align: center;
+}
+#table_custom tr{
+	background-color: #02bdd5;
+	text-align: center;
+	color: white !important;
+}
